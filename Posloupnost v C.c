@@ -15,7 +15,7 @@ int main(){
     }
 
     for(int i = 0; i < n; i++){
-        printf( "%d, ", pole[i] );
+        printf( "%d ", pole[i] );
 }
 
     return 0;
