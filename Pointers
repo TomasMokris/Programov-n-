@@ -1,0 +1,18 @@
+int main() {
+    
+    int x;
+    x = 42;
+    int *p;
+    p = &x;
+    
+        printf("h=%d a=%d r=%d", x, &x, *p);
+        
+    *p += 2;
+    
+    printf("\n");
+
+    printf("h=%d a=%d r=%d", x, &x, *p);
+
+    //printf("%d", x);
+    return 0;
+}
