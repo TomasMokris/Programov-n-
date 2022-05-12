@@ -1,0 +1,49 @@
+// Hello world! Cplayground is an online sandbox that makes it easy to try out
+// code.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+
+int nepritel(){
+    int r = (rand() % 8) + 15;
+    return r;
+}
+
+int hrac(){
+    int r = (rand() % 8) + 11;
+    return r;
+}
+
+int main()
+{
+   srand(time(NULL));
+   char ans;
+   int h = 0;
+   int n = 0;
+   
+     printf("Chceš ukončit hru a odhalit Krupiérovi karty? \n Stiskni Y ukončení hry nebo N pro pokračování a vytáhnutí další karty: ");
+  scanf("%c", &ans);
+
+  while (ans == 'y' || ans == 'Y'){
+      h = h + hrac();
+      n = n + nepritel();
+      
+      printf("\n Krupiérovo součet karet je %i", n);
+      printf("\n Tvůj součet karet je %i", h);
+      if (h > n){
+          printf("\n\n Vyhrál jsi GRATULUJI!!!");
+      }
+        else{
+          printf("\n\n Prohrál jsi Hodně Štěstí Přístě");
+        
+      } 
+      
+    break;
+  }
+  while (ans == 'n' || ans == 'N'){
+      printf("\n Měj se");
+    break; 
+  }
+}
