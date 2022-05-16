@@ -33,10 +33,14 @@ for (int i = 1; i < 100 ; i++){
    
     else printf("\n XX YOU LOST WITH THE PICK:%d", pick2);
     printf("\n // THE WIN DOOR WAS:%d", choosen);
+    
+        percent = (won / (float)i)*100;
+    printf("\n\n WIN RATE: %.0f%%", percent );
+    
+    if (i <= 98){
     printf("\n\n\n === Another Game === \n\n\n");
-
-    percent = (won / (float)i)*100;
-    printf(" WIN RATE: %.0f%%", percent );
+    }
+    else printf("\n\n\n === THE END OF THE GAME === \n\n\n");
     }
 
     return 0;
