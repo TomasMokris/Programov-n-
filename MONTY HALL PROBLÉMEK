@@ -25,13 +25,13 @@ for (int i = 1; i < 100 ; i++){
        printf("\n\n Are you sure you picked the right door??");
      int pick2 = rndm();
        if (choosen == pick2){  
-       printf("\n\n // YOU WON WITH A PICK == %d" , pick2 );
+       printf("\n $$ YOU WON WITH A PICK == %d" , pick2 );
        won++;
        
-      printf("\n\n");
+      printf("\n");
        }
    
-    else printf("\n // YOU LOST WITH THE PICK:%d", pick2);
+    else printf("\n XX YOU LOST WITH THE PICK:%d", pick2);
     printf("\n // THE WIN DOOR WAS:%d", choosen);
     printf("\n\n\n === Another Game === \n\n\n");
 
