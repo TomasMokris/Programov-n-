@@ -1,49 +1,68 @@
-// Hello world! Cplayground is an online sandbox that makes it easy to try out
-// code.
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
 
 int nepritel(){
-    int r = (rand() % 8) + 15;
+    int r = (rand() % 8) + 14;
     return r;
 }
 
 int hrac(){
-    int r = (rand() % 8) + 11;
+    int r = (rand() % 10) + 1;
     return r;
 }
 
 int main()
 {
    srand(time(NULL));
-   char ans;
+   char odpoved;
    int h = 0;
    int n = 0;
+   int game = 1;
    
-     printf("Chceš ukončit hru a odhalit Krupiérovi karty? \n Stiskni Y ukončení hry nebo N pro pokračování a vytáhnutí další karty: ");
-  scanf("%c", &ans);
+   while (game == 1){
+   printf("\n\n //Líznout Kartu Y/y  N/n ?");
+   scanf("%c", &odpoved);
+   
+   if (odpoved == 'y' || odpoved == 'Y'){
+    h = h + hrac();
 
-  while (ans == 'y' || ans == 'Y'){
-      h = h + hrac();
-      n = n + nepritel();
-      
+    printf("\n Tvůj součet karet je %i \n\n\n", h);
+   }
+     if (odpoved == 'n' || odpoved == 'N'){
+      game = 2;
+     }
+   }
+   
+      char ans;
+  while (game == 2) {
+          n = n + nepritel();
       printf("\n Krupiérovo součet karet je %i", n);
       printf("\n Tvůj součet karet je %i", h);
-      if (h > n){
-          printf("\n\n Vyhrál jsi GRATULUJI!!!");
+      if (h > n && n<22 && h<22){
+          printf("\n\n === Vyhrál jsi GRATULUJI!!! ===");
+          game = 3;
       }
-        else{
-          printf("\n\n Prohrál jsi Hodně Štěstí Přístě");
-        
+      if (h < n && n < 22 && h < 22){
+          printf("\n\n === Prohrál jsi Hodně Štěstí Přístě ===");
+                  game = 3;
+
+      }
+      if (h == n && h > 21 && n > 21){
+          printf("\n\n === Remíza! ===");
+                    game = 3;
+
+      }
+      if (h > 21){ 
+         printf("\n\n === Prohrál jsi na Přetáhnutí Karet ===");
+                   game = 3;
+
+      }
+      if (n > 21){ 
+         printf("\n\n === Vyhrál jsi protože Krupiér Přetáhl ===");
+                   game = 3;
+
       } 
-      
-    break;
-  }
-  while (ans == 'n' || ans == 'N'){
-      printf("\n Měj se");
-    break; 
-  }
-}
+      }
+      }
