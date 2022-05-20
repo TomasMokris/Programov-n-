@@ -33,6 +33,9 @@ int main()
      if (odpoved == 'n' || odpoved == 'N'){
       game = 2;
      }
+     if (h > 21){
+     game = 2;
+     }
    }
    
       char ans;
