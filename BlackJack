@@ -70,7 +70,7 @@ int main()
      }
      
      while (game == 3) {
-         printf("\n\n //Zahrát hru znovu ? Y/y ");
+         printf("\n\n //Zahrát hru znovu   Y/y   N/n ? ");
    scanf("%c", &ans);
    
    if (ans == 'y' || ans == 'Y'){
